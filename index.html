@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aqua Hunza - Purificación</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f9ff;
+}
+
+/* NAV */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: #0a5c8a;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 15px;
+  z-index: 1000;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.hero {
+  height: 85vh;
+  background-image: url('https://img.freepik.com/fotos-premium/lago-montanas-lago-azul-montanas-al-fondo_865967-8172.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+
+.hero-content {
+  position: relative;
+  max-width: 800px;
+  padding: 20px;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 42px;
+}
+
+/* SECCIONES */
+section {
+  padding: 50px 20px;
+}
+
+#info {
+  background: #e0f4ff;
+  text-align: center;
+}
+
+/* SLIDER */
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.slider {
+  display: flex;
+  gap: 15px;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.card {
+  min-width: 280px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* BOTONES */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #0a5c8a;
+  color: white;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.left { left: 10px; }
+.right { right: 10px; }
+
+/* GALERÍA */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.gallery img {
+  width: 220px;
+  border-radius: 10px;
+}
+
+/* WHATSAPP */
+.btn-whatsapp {
+  background: #25d366;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<div class="navbar">
+  <a onclick="scrollToSection('home')">Inicio</a>
+  <a onclick="scrollToSection('servicios')">Servicios</a>
+  <a onclick="scrollToSection('info')">Información</a>
+  <a onclick="scrollToSection('contacto')">Contacto</a>
+</div>
+
+<!-- HERO -->
+<div class="hero" id="home">
+  <div class="hero-content">
+    <h1>HIGH TECHNOLOGY WATER PURIFIERS</h1>
+    <p>Filtros y sistemas de purificación para hogares, empresas e industria</p>
+  </div>
+</div>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+<h2 style="text-align:center; color:#0a5c8a;">Servicios</h2>
+
+<div class="slider-container">
+
+<button class="nav-btn left" onclick="move(-1)">❮</button>
+
+<div class="slider" id="slider">
+
+<div class="card">
+<img src="https://img.freepik.com/premium-photo/water-glass-hand-filling-glass-with-tap-water-from-faucet-closeup-isolated-white-background_162695-39291.jpg">
+<h3>Purificación</h3>
+<p>Agua segura y libre de impurezas.</p>
+</div>
+
+<div class="card">
+<img src="https://aquabright.ru/images/2022-06-27_10-36-13.png">
+<h3>Under Sink</h3>
+<p>Sistemas bajo mesada compactos.</p>
+</div>
+
+<div class="card">
+<img src="https://img.freepik.com/foto-gratis/repartidor-trabajo-botella-agua_23-2148382520.jpg">
+<h3>Distribución</h3>
+<p>Entrega de botellones a domicilio.</p>
+</div>
+
+<div class="card">
+<img src="https://www.ropurifierfilter.com/upload/image/thumb/mythumb_1000_1000_20180418224613970.jpg">
+<h3>Filtración Avanzada</h3>
+<p>Tecnología de alto rendimiento.</p>
+</div>
+
+</div>
+
+<button class="nav-btn right" onclick="move(1)">❯</button>
+
+</div>
+</section>
+
+<!-- GALERÍA -->
+<section>
+<h2 style="text-align:center; color:#0a5c8a;">Galería</h2>
+
+<div class="gallery">
+<img src="https://img.freepik.com/premium-photo/young-latin-woman-helps-herself-water-from-tap-while-chatting-with-her-friend-after-doing-yoga-exercises_142883-2884.jpg">
+<img src="https://img.freepik.com/premium-photo/blonde-woman-pastel-blue-tshirt-filling-glass-with-tap-water-from-faucet-white-kitchen_144356-8956.jpg">
+<img src="https://img.freepik.com/fotos-premium/diferentes-botellas-agua-aisladas-blanco_392895-123380.jpg">
+</div>
+</section>
+
+<!-- INFO -->
+<section id="info">
+<h2>Información</h2>
+<p>Sistemas modernos de purificación de agua para hogares e industria.</p>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" style="text-align:center;">
+<h2>Contacto</h2>
+<a class="btn-whatsapp" href="https://wa.me/595000000000" target="_blank">
+Enviar WhatsApp
+</a>
+</section>
+
+<script>
+
+function scrollToSection(id) {
+  document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+}
+
+/* SLIDER */
+let index = 0;
+const slider = document.getElementById("slider");
+const cards = slider.children.length;
+const visible = 3;
+
+function updateSlider() {
+  const cardWidth = slider.children[0].offsetWidth + 15;
+  slider.style.transform = `translateX(-${index * cardWidth}px)`;
+}
+
+function move(dir) {
+  const max = cards - visible;
+
+  index += dir;
+
+  if (index < 0) index = max;
+  if (index > max) index = 0;
+
+  updateSlider();
+}
+
+/* AUTO MOVIMIENTO */
+setInterval(() => {
+  move(1);
+}, 3500);
+
+window.addEventListener("resize", updateSlider);
+
+</script>
+
+</body>
+</html>
